@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 
 
 @Component({
@@ -8,6 +10,21 @@ import { Component } from '@angular/core';
 
 
 export class ClienteComponent {
+
+  @Input() nombre: string;
+  @Input() email: string;
+
+  nombreQueryString: string;
+  emailQueryString: string;
+
+  constructor(private route: ActivatedRoute)
+  {
+      this.route.queryParams.subscribe(params => {
+      this.nombreQueryString = params['nombre'];
+      this.emailQueryString = params['email'];
+    });
+  }
+
 
 
 

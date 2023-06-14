@@ -6,17 +6,18 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { LoginComponent } from './Login/Login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    FetchDataComponent,
     InicioComponent,
-    ClienteComponent
+    ClienteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,9 +25,9 @@ import { ClienteComponent } from './cliente/cliente.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: InicioComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'inicio', component: InicioComponent },
       { path: 'cliente', component: ClienteComponent },
+      { path: 'login', component: LoginComponent },
     ])
   ],
   providers: [],
